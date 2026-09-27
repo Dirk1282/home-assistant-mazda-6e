@@ -33,25 +33,28 @@ REAUTH_SCHEMA = vol.Schema({
     vol.Required(CONF_EMAIL): str,
     vol.Required(CONF_PASSWORD): str})
 
-RECONFIGURE_SCHEMA = vol.Schema({
-    vol.Required(CONF_EMAIL): str,
-    vol.Required(CONF_PASSWORD): str,
-    vol.Required(CONF_REGION, default=REGION_EUROPE): SelectSelector(
-        SelectSelectorConfig(
-            options=[
-                REGION_EUROPE,
-                REGION_ASIA,
-            ],
-            mode="dropdown",
-        )
-    ),
-    vol.Required(CONF_CONTROL_PIN): TextSelector(
-        TextSelectorConfig(type=TextSelectorType.PASSWORD)
-    )})
-
 STEP3_SCHEMA = vol.Schema({
     vol.Required("verification_code"): str
 })
+
+
+def reconfigure_schema(region):
+    return vol.Schema({
+        vol.Required(CONF_EMAIL): str,
+        vol.Required(CONF_PASSWORD): str,
+        vol.Required(CONF_REGION, default=region): SelectSelector(
+            SelectSelectorConfig(
+                options=[
+                    REGION_EUROPE,
+                    REGION_ASIA,
+                ],
+                mode="dropdown",
+            )
+        ),
+        vol.Required(CONF_CONTROL_PIN): TextSelector(
+            TextSelectorConfig(type=TextSelectorType.PASSWORD)
+        ),
+    })
 
 
 class Mazda6eConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
@@ -108,11 +111,12 @@ class Mazda6eConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 self.context["entry_id"]
             )
             self.deviceid = self.reconfigure_entry.data.get("deviceid") or str(uuid.uuid4())
+            self.region = self.reconfigure_entry.data.get(CONF_REGION, REGION_EUROPE)
 
         if user_input is None:
             return self.async_show_form(
                 step_id="reconfigure",
-                data_schema=RECONFIGURE_SCHEMA,
+                data_schema=reconfigure_schema(self.region)
             )
 
         return await self.async_step_user(user_input)
@@ -128,7 +132,7 @@ class Mazda6eConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         step_id = "reconfigure" if self.reconfigure_entry else (
             "reauth_confirm" if self.reauth_entry else "user"
         )
-        data_schema = RECONFIGURE_SCHEMA if self.reconfigure_entry else (
+        data_schema = reconfigure_schema(self.region) if self.reconfigure_entry else (
             REAUTH_SCHEMA if self.reauth_entry else STEP1_SCHEMA
         )
         if self.deviceid is None:
