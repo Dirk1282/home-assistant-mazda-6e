@@ -4,10 +4,10 @@
   "codeowners": [],
   "config_flow": true,
   "documentation": "https://github.com/fano0001/home-assistant-mazda-6e",
-  "issue_tracker": "https://github.com/fano0001/home-assistant-mazda-6e/issues",
   "iot_class": "cloud_polling",
-  "version": "1.2.2",
+  "issue_tracker": "https://github.com/fano0001/home-assistant-mazda-6e/issues",
   "requirements": [
     "cryptography>=46.0.7,<49"
-  ]
+  ],
+  "version": "1.2.2"
 }

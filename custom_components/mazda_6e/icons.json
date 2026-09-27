@@ -20,33 +20,33 @@
       "seat_status_front_left": {
         "default": "mdi:car-seat",
         "state": {
-          "FAN": "mdi:car-seat-cooler",
-          "HEATING": "mdi:car-seat-heater",
-          "OFF": "mdi:car-seat"
+          "fan": "mdi:car-seat-cooler",
+          "heating": "mdi:car-seat-heater",
+          "off": "mdi:car-seat"
         }
       },
       "seat_status_front_right": {
         "default": "mdi:car-seat",
         "state": {
-          "FAN": "mdi:car-seat-cooler",
-          "HEATING": "mdi:car-seat-heater",
-          "OFF": "mdi:car-seat"
+          "fan": "mdi:car-seat-cooler",
+          "heating": "mdi:car-seat-heater",
+          "off": "mdi:car-seat"
         }
       },
       "seat_status_rear_left": {
         "default": "mdi:car-seat",
         "state": {
-          "FAN": "mdi:car-seat-cooler",
-          "HEATING": "mdi:car-seat-heater",
-          "OFF": "mdi:car-seat"
+          "fan": "mdi:car-seat-cooler",
+          "heating": "mdi:car-seat-heater",
+          "off": "mdi:car-seat"
         }
       },
       "seat_status_rear_right": {
         "default": "mdi:car-seat",
         "state": {
-          "FAN": "mdi:car-seat-cooler",
-          "HEATING": "mdi:car-seat-heater",
-          "OFF": "mdi:car-seat"
+          "fan": "mdi:car-seat-cooler",
+          "heating": "mdi:car-seat-heater",
+          "off": "mdi:car-seat"
         }
       }
     }
