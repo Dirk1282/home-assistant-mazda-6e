@@ -187,10 +187,10 @@
       "battery_state_of_charge": {
         "name": "Charge level"
       },
-      "chargeCurrent": {
+      "charge_current": {
         "name": "Charging current"
       },
-      "chargeStatus": {
+      "charge_status": {
         "name": "Charge status",
         "state": {
           "CHARGING": "charging",
@@ -239,7 +239,7 @@
       "rear_right_tire_pressure": {
         "name": "Rear right tire pressure"
       },
-      "remainChargeTime": {
+      "remain_charge_time": {
         "name": "Remaining charge time"
       },
       "remaining_driving_range": {

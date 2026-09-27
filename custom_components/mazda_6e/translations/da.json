@@ -111,10 +111,10 @@
       "battery_state_of_charge": {
         "name": "Ladeniveau"
       },
-      "chargeCurrent": {
+      "charge_current": {
         "name": "Aktuel ladeeffekt"
       },
-      "chargeStatus": {
+      "charge_status": {
         "name": "Opladningsstatus",
         "state": {
           "CHARGING": "Oplader",
@@ -142,7 +142,7 @@
       "rear_right_tire_pressure": {
         "name": "Dæktryk højre baghjul"
       },
-      "remainChargeTime": {
+      "remain_charge_time": {
         "name": "Resterende ladetid"
       },
       "remaining_driving_range": {

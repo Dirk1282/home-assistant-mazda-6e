@@ -124,7 +124,7 @@ SENSOR_TYPES: tuple[Mazda6eSensorDescription, ...] = (
     *(_tire_pressure(position) for position in _TIRE_KEYS),
     Mazda6eSensorDescription(
         key="chargeCurrent",
-        translation_key="chargeCurrent",
+        translation_key="charge_current",
         icon="mdi:current-ac",
         native_unit_of_measurement=UnitOfElectricCurrent.AMPERE,
         device_class=SensorDeviceClass.CURRENT,
@@ -161,7 +161,7 @@ SENSOR_TYPES: tuple[Mazda6eSensorDescription, ...] = (
     ),
     Mazda6eSensorDescription(
         key="remainChargeTime",
-        translation_key="remainChargeTime",
+        translation_key="remain_charge_time",
         icon="mdi:progress-clock",
         native_unit_of_measurement=UnitOfTime.MINUTES,
         device_class=SensorDeviceClass.DURATION,
@@ -171,7 +171,7 @@ SENSOR_TYPES: tuple[Mazda6eSensorDescription, ...] = (
     ),
     Mazda6eSensorDescription(
         key="chargeStatus",
-        translation_key="chargeStatus",
+        translation_key="charge_status",
         icon="mdi:state-machine",
         device_class=SensorDeviceClass.ENUM,
         options=[e.name for e in ChargeStatus],
